@@ -1,0 +1,70 @@
+! ******************
+! urxvt config
+! ******************
+
+! Disable Perl extension
+! If you do not use the Perl extension features, you can improve the security
+! and speed by disabling Perl extensions completely. 
+!URxvt.perl-ext::
+!URxvt.perl-ext-common:
+
+! Font spacing
+! By default the distance between characters can feel too wide. Its controlled
+! by this entry: 
+! URxvt.letterSpace: -1
+
+! -- Fonts -- !
+URxvt.font:xft:Reactor7:pixelsize=16
+URxvt.boldfont:xft:Monospace-Bold:pixelsize=13
+!URxvt*font:  -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
+!URxvt*boldFont:  -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+!URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
+!URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+
+! Disable scrollbar
+!URxvt*scrollBar: false
+
+! Scrollbar style - rxvt (default), plain (most compact), next, or xterm
+URxvt.scrollstyle: plain
+
+URxvt*inheritPixmap: true
+URxvt.transparent:true
+URxvt.shading:40
+!URxvt.tintColor: white
+! Background color
+!URxvt*background: blue
+URxvt*depth: 32
+URxvt*background: [65]#000000
+URxvt*background-expr: rootalign root
+!URxvt*backgroundPixmap: "Docs/Pics/001 - 3pEoN0X.jpg"
+! Font color
+!URxvt*foreground: white
+URxvt*foreground: green
+
+! Other colors
+!URxvt*color0: black
+!URxvt*color1: red3
+URxvt*color1: #CD0000
+URxvt*color2: green3
+!URxvt*color3: yellow3
+URxvt*color3: #C4A000
+URxvt*color4: grey35
+
+!URxvt*color4: #3465A4
+URxvt*color5: magenta3
+URxvt*color6: cyan3
+URxvt*color7: gray90
+URxvt*color8: grey50
+URxvt*color9: red
+URxvt*color10: green
+URxvt*color11: yellow
+!URxvt*color12: blue
+URxvt*color12: #3465A4
+URxvt*color13: magenta
+URxvt*color14: cyan
+!URxvt*.termName: screen-256color
+! ******************
+! /urxvt config
+! ******************
+!
+URxvt.clipboard.autocopy: true

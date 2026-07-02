@@ -1,0 +1,1 @@
+netctl stop netctl-rit 

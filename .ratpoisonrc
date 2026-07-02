@@ -1,0 +1,28 @@
+unmanage feh
+unmanage lemonbar
+unmanage "sh barfile.sh"
+bind c exec urxvt
+bind C-c exec urxvt -tr -tint ivory -sh 10
+bind f exec firejail firefox
+bind C-f exec firefox
+bind a alsi
+bind t time
+bind e ratclick 1:
+bind v ratclick 2:
+
+set border 2
+set barpadding 5
+set padding 0 0 0 15
+escape less
+definekey top Super_L readkey root
+definekey root Super_L link less
+bind Menu other
+bind less other
+bind l exec xsecurelock
+
+
+exec feh --bg-fill --randomize ~/Docs/Pics/* 
+exec sh ~/slideshow.sh ~/Docs/Pics 100
+exec gcc -o /usr/share/ratpoison/sloppy /usr/share/ratpoison/sloppy.c -lX11
+exec sh /usr/share/ratpoison/sloppy
+exec i3status -c .i3lemonbar.conf | lemonbar -b -dp -f "Gaiatype"
