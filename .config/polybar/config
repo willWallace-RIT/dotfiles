@@ -1,0 +1,935 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #222
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/touch]
+width =100%
+height = 27
+radius = 6.0
+fixed-center = false
+
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+bottom=true
+module-margin-left = 1
+module-margin-right = 2
+font-0 = Gaiatype:pixelsize=7;style=Regular
+font-1 = Unifont:style=Sans-Serif;size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Font Awesome 6 Free:style=Solid:pixelsize=18:antialias=false;3
+font-4 = Font Awesome 6 Brands:style=Regular:pixelsize=18:antialias=false;
+
+font-6 = Font Awesome 6 Free:style=Regular:pixelsize=18:antialias=false;
+font-7 = Font Awesome v4 Compatibility:style=Regular:pixelsize=18:antialias=false;
+font-5 = ChronoType:pixelsize=12
+modules-left = i3touchmenu touchredraw touchxreal touchbt touchbtwiz
+;;;;;modules-left = i3touchmenu touchredraw touchxreal  touchbtwiz
+modules-center = touchvoldown touchvolup touchbrightdown touchbrightup
+modules-right = touchkeyboard
+
+
+[bar/xreal]
+monitor = ${env:MONITOR:DP-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+enable-ipc = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Gaiatype:pixelsize=7;style=Regular
+font-1 = Unifont:style=Sans-Serif;size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Font Awesome 6 Free:style=Solid:pixelsize=18:antialias=false;3
+font-4 = Font Awesome 6 Brands:style=Regular:pixelsize=18:antialias=false;3]
+font-5 = ChronoType:pixelsize=12
+modules-left = xwindow i3
+#modules-center = mpd
+modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan0 wlan1 eth0 tun0 battery temperature date powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+
+[bar/example]
+monitor = ${env:MONITOR:eDP-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+enable-ipc = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Gaiatype:pixelsize=7;style=Regular
+font-1 = Unifont:style=Sans-Serif;size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Font Awesome 6 Free:style=Solid:pixelsize=18:antialias=false;3
+font-4 = Font Awesome 6 Brands:style=Regular:pixelsize=18:antialias=false;3]
+font-5 = ChronoType:pixelsize=12
+modules-left = xwindow i3
+#modules-center = mpd
+modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan0 wlan1 eth0 tun0 battery temperature date powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[bar/noComp]
+enable-ipc = true
+
+monitor = ${env:MONITOR:eDP-1}
+
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Gaiatype:pixelsize=7;style=Regular
+font-1 = Unifont:style=Sans-Serif;size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Font Awesome 6 Free:style=Solid:pixelsize=18:antialias=false;3
+font-4 = Font Awesome 6 Brands:style=Regular:pixelsize=18:antialias=false;3]
+font-5 = ChronoType:pixelsize=12
+modules-left = xwindow i3
+#modules-center = mpd
+modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan0 wlan1 eth0 tun0 battery temperature date powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+label = %title:0:30:...%
+format-background = #202045
+format-foreground = #FFF
+format-padding = 4
+label-font= 6
+label-maxlen = 50
+label-empty = Empty
+label-empty-foreground= #707880
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+
+#[module/mpd]
+#type = internal/mpd
+#format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+#icon-prev = 
+#icon-stop = 
+#icon-play = 
+#icon-pause = 
+#icon-next = 
+
+#label-song-maxlen = 25
+#label-song-ellipsis = true
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = BL
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+[module/wlan0]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid% %local_ip% %upspeed% %downspeed%
+
+;format-disconnected = 
+format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = |w:-|
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+[module/wlan1]
+type = internal/network
+interface = wlan1
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid% %local_ip% %upspeed% %downspeed%
+
+;format-disconnected = 
+format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = |w:-|
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+
+
+[module/eth0]
+type = internal/network
+interface = net0
+interval = 3.0
+format-connected= <label-connected>
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %ifname% %local_ip% %upspeed% %downspeed%
+
+;format-disconnected =
+format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = |e:-|
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/tun0]
+type = internal/network
+interface = tun0
+interval = 3.0
+
+format-connected= <label-connected>
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %ifname% %local_ip% %upspeed% %downspeed%
+
+;format-disconnected =
+format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = |V:-|
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
+[module/i3touchmenu]
+type = custom/menu
+
+font-0 = Gaiatype:pixelsize=7;style=Regular
+font-1 = Unifont:style=Sans-Serif;size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Font Awesome 5 Free:style=Solid:pixelsize=18:antialias=false;3
+font-4 = Font Awesome 5 Brands:style=Regular:pixelsize=18:antialias=false;
+
+font-5 = ChronoType:pixelsize=12
+expand-right = true
+
+format-spacing = 1
+
+;; Open the menu
+label-open = "    "
+label-open-foreground = #FFF
+
+;; Close the menu
+label-close = 
+label-close-foreground = ${colors.secondary}
+label-separator = "    "
+label-separator-foreground = ${colors.foreground-alt}
+
+;; Launcher
+menu-0-0 = 
+menu-0-0-exec = menu-open-1
+
+;; Move
+menu-0-1 = 
+menu-0-1-exec = menu-open-2
+
+;; Layout
+menu-0-2 = 
+menu-0-2-exec = menu-open-3
+
+;; Split
+menu-0-3 = 
+menu-0-3-exec = menu-open-4
+
+;; Resize
+menu-0-4 = 
+menu-0-4-exec = menu-open-5
+
+;; Move to workspace
+menu-0-5 = 
+menu-0-5-exec = menu-open-6
+
+;; Kill
+menu-0-6 = 
+menu-0-6-exec = menu-open-7
+
+;; Power
+menu-0-7 ="" 
+menu-0-7-exec = menu-open-8
+
+
+;; Rotate
+menu-0-8 = "    "
+menu-0-8-exec = menu-open-9
+
+;; Launcher: Back to main menu
+menu-1-0 = 
+menu-1-0-exec = menu-open-0
+
+;; Launcher: chromium
+menu-1-1=
+menu-1-1-exec= chromium &
+
+;; Launcher: urxvt
+menu-1-2="    "
+menu-1-2-exec = urxvt &
+
+;; Move: Back to main menu
+menu-2-0 = 
+menu-2-0-exec = menu-open-0
+
+;; Move: Left
+menu-2-1 = 
+menu-2-1-exec = i3-msg 'move left'
+
+;; Move: Right
+menu-2-2 = 
+menu-2-2-exec = i3-msg 'move right'
+
+;; Move: Up
+menu-2-3 = 
+menu-2-3-exec = i3-msg 'move up'
+
+;; Move: Down
+menu-2-4 = "    "
+menu-2-4-exec = i3-msg 'move down'
+
+;; Layout: Back to main menu
+menu-3-0 = 
+menu-3-0-exec = menu-open-0
+
+;; Layout: Split
+menu-3-1 = 
+menu-3-1-exec = i3-msg 'layout toggle split'
+
+;; Layout: Stacking
+menu-3-2 = 
+menu-3-2-exec = i3-msg 'layout stacking'
+
+;; Layout: Tabbed
+menu-3-3 =     
+menu-3-3-exec = i3-msg 'layout tabbed'
+
+;; Layout: Toggle floating
+menu-3-4 = "    "
+menu-3-4-exec = i3-msg 'floating toggle'
+
+;; Split: Back to main menu
+menu-4-0 = 
+menu-4-0-exec = menu-open-0
+
+;; Split: Vertical
+menu-4-1 = 
+menu-4-1-exec = i3-msg 'split v'
+
+;; Split: Horizontal
+menu-4-2 = "    "
+menu-4-2-exec = i3-msg 'split h'
+
+;; Resize: Back to main menu
+menu-5-0 = 
+menu-5-0-exec = menu-open-0
+
+;; Resize: Grow height
+menu-5-1 = 
+menu-5-1-exec = i3-msg 'resize grow height 5 px or 5 ppt'
+
+;; Resize: Shrink height
+menu-5-2 =
+menu-5-2-exec = i3-msg 'resize shrink height 5 px or 5 ppt'
+
+;; Resize: Grow width
+menu-5-3 = 
+menu-5-3-exec = i3-msg 'resize grow width 5 px or 5 ppt'
+
+;; Resize: Shrink width
+menu-5-4 = "    "
+menu-5-4-exec = i3-msg 'resize shrink width 5 px or 5 ppt'
+
+
+
+;; Move to workspace: Back to main menu
+menu-6-0 = 
+menu-6-0-exec = menu-open-0
+
+;; Move to workspace: 1
+menu-6-1 = 1
+menu-6-1-exec = i3-msg 'move container to workspace 1'
+
+;; Move to workspace: 2
+menu-6-2 = 2
+menu-6-2-exec = i3-msg 'move container to workspace 2'
+
+;; Move to workspace: 3
+menu-6-3 = 3
+menu-6-3-exec = i3-msg 'move container to workspace 3'
+
+;; Move to workspace: 4
+menu-6-4 = 4
+menu-6-4-exec = i3-msg 'move container to workspace 4'
+
+;; Move to workspace: 5
+menu-6-5 = 5
+menu-6-5-exec = i3-msg 'move container to workspace 5'
+
+;; Move to workspace: 6
+menu-6-6 = 6
+menu-6-6-exec = i3-msg 'move container to workspace 6'
+
+;; Move to workspace: 7
+menu-6-7 = 7
+menu-6-7-exec = i3-msg 'move container to workspace 7'
+
+;; Move to workspace: 8
+menu-6-8 = 8
+menu-6-8-exec = i3-msg 'move container to workspace 8'
+
+;; Move to workspace: 9
+menu-6-9 = 9
+menu-6-9-exec = i3-msg 'move container to workspace 9'
+
+;; Move to workspace: 10
+menu-6-10 = "10    "
+menu-6-10-exec = i3-msg 'move container to workspace 10'
+
+;; Kill: Back to main menu
+menu-7-0 = 
+menu-7-0-exec = menu-open-0
+
+;; Kill: Kill
+menu-7-1 = "You sure?        "
+menu-7-1-exec = i3-msg 'kill'
+
+;; Power: Back to main menu
+menu-8-0 = 
+menu-8-0-exec = menu-open-0
+
+;; Power: Screen off
+menu-8-1 = 
+menu-8-1-exec = xset dpms force off 
+
+;; Power: Lock
+menu-8-2 = 
+menu-8-2-exec = i3lock
+
+;; Power: Reboot
+menu-8-3 = 
+menu-8-3-exec = shutdown -r now
+
+;; Power: Shutdown
+menu-8-4 = "    "
+menu-8-4-exec = shutdown -h now
+
+;; Rotate:
+menu-9-0 = 
+menu-9-0-exec = menu-open-0
+
+;; Rotate normal:
+menu-9-1 = 
+menu-9-1-exec = python ~/.config/polybar/screenRotate.py normal
+
+;; Rotate left:
+menu-9-2 = 
+menu-9-2-exec = python ~/.config/polybar/screenRotate.py left
+
+;; Rotate right:
+menu-9-3 =
+menu-9-3-exec = python ~/.config/polybar/screenRotate.py right
+
+;; Rotate left:
+menu-9-4 = 
+menu-9-4-exec = python ~/.config/polybar/screenRotate.py inverted
+
+
+[module/touchbrightdown]
+;; Brightness down
+type=custom/text
+content="  "
+content-foreground=#fff
+click-left=xbacklight -dec 10
+
+[module/touchbrightup]
+;; Brightness up
+type=custom/text
+content="    "
+content-foreground=#fff
+click-left=xbacklight -inc 10
+[module/touchkeyboard]
+;; Open onscreen keyboard (onboard)
+type=custom/text
+content="   "
+content-foreground=#fff
+click-left= dbus-send --type=method_call --print-reply --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.ToggleVisible
+[module/touchredraw]
+;; Restart i3 in order to redraw polybar to fit screen orientation
+type=custom/text
+content = "    "
+content-foreground=#fff
+click-left = i3-msg 'restart'
+
+
+[module/touchbt]
+;; Restart i3 in order to redraw polybar to fit screen orientation
+type=custom/script
+interval=2
+tail=true
+exec=python -u ~/.config/polybar/bluetooth.py read
+label=%output%
+format=<label>
+format-fail=%<label>%
+click-left=python ~/.config/polybar/bluetooth.py toggle
+content-foreground=#fff
+
+[module/touchbtwiz]
+;; Restart i3 in order to redraw polybar to fit screen orientation
+type=custom/text
+content="++BT++"
+click-left=bluedevil-wizard
+content-foreground=#fff
+
+
+[module/touchxreal]
+;; Restart i3 in order to redraw polybar to fit screen orientation
+type=custom/text
+content = "    "
+content-foreground=#fff
+click-left = sh .config/polybar/screenRotate2.sh && sh .config/polybar/launchXreal.sh
+
+[module/touchvolmute]
+;; Mute
+type=custom/text
+content="  "
+content-foreground=#fff
+click-left=pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+[module/touchvoldown]
+;; Volume down
+type=custom/text
+
+
+content="  "
+content-foreground=#fff
+click-left=pactl set-sink-volume @DEFAULT_SINK@ -5% 
+
+[module/touchvolup]
+;; Volume up
+type=custom/text
+content="    "
+content-foreground=#fff
+click-left=pactl set-sink-volume @DEFAULT_SINK@ +5% 
+
